@@ -1,5 +1,5 @@
 package src;
-/*
+/**
 Given a string s and int k, write a function that find and returns a substring of s with exact length k
     that contains the highest number of vowel letter
 - If s contains no vowel, return the string "Not found!" without the quotes.
@@ -25,7 +25,10 @@ public class SubstringWithHighestVowel {
                     case 'a', 'e', 'i', 'o', 'u' -> volCount++;
                 }
             }
-            if (volCount > maxVol) str = sub;
+            if (volCount > maxVol){
+                maxVol = volCount;
+                str = sub;
+            }
         }
         return str.equals("") ? "Not found!" : str;
     }
