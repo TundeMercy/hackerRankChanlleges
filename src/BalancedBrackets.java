@@ -27,7 +27,7 @@ s contains a single string , a sequence of brackets.
 
 Constraints
 
-All chracters in the sequences ∈ { {, }, (, ), [, ] }.
+All characters in the sequences ∈ { {, }, (, ), [, ] }.
 *
 * */
 
@@ -41,12 +41,13 @@ public class BalancedBrackets {
     public static void main(String[] args) {
         System.out.println(isBalanced("{}[]{}{{((){}{()()})}}()"));
         System.out.println(isBalanced("{[(])}"));
+        System.out.println(isBalanced("{{[[(())]]}}"));
     }
 
     static boolean isBalanced(String s) {
-        char[] ch = s.toCharArray();
         List<Character> list = new ArrayList<>();
-        for (char c : ch) {
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
             int lastIndex = list.size() - 1;
             if (
                     (list.size() == 0 && (c == '}' || c == ')' || c == ']')) ||
